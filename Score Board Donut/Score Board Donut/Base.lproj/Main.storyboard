@@ -25,6 +25,11 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="X9P-eL-MCp" secondAttribute="height" multiplier="1:1" id="nD7-XA-mF0"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="numPlayer">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

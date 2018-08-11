@@ -12,26 +12,28 @@ import UIKit
 class DonutView: UIView {
     
     @IBInspectable var numPlayer: Int = 4
+    
+    let colorOps = [ColorPool.Red, .Yellow, .Blue, .Green]
 
     override func draw(_ rect: CGRect) {
-        drawOuterSection(rect: rect, section: 0, color: ColorPool.Red.rawValue)
-        drawOuterSection(rect: rect, section: 1, color: ColorPool.Yellow.rawValue)
-        drawOuterSection(rect: rect, section: 2, color: ColorPool.Blue.rawValue)
-        drawOuterSection(rect: rect, section: 3, color: ColorPool.Green.rawValue)
+        drawOuterSection(rect: rect, numPlayer: numPlayer)
     }
     
-    func drawOuterSection(rect: CGRect, section: Int, color: String) {
+    func drawOuterSection(rect: CGRect, numPlayer: Int) {
 
-        let startAngle = CGFloat(.pi * (0.25 + 0.5 * Double(section)))
-        let endAngle = CGFloat(.pi * (0.75 + 0.5 * Double(section)))
         let radius: CGFloat = 0.5 * max(bounds.width, bounds.height)
-        UIColor(hex: color).setStroke()
 
-        let outerPath = UIBezierPath(arcCenter: rect.center, radius: 0.75 * radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
-        
-        outerPath.lineWidth = 0.5 * radius
-        outerPath.stroke()
+        for section in 0...(numPlayer - 1) {
+            let startAngle = .pi * CGFloat(0.5 + (-1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
+            print(startAngle)
+            let endAngle = .pi * CGFloat(0.5 + (1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
+            UIColor(hex: colorOps[section].rawValue).setStroke()
 
+            let outerPath = UIBezierPath(arcCenter: rect.center, radius: 0.75 * radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+
+            outerPath.lineWidth = 0.5 * radius
+            outerPath.stroke()
+        }
     }
 }
 
