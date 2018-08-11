@@ -17,11 +17,12 @@ class DonutView: UIView {
 
     override func draw(_ rect: CGRect) {
         drawOuterSection(rect: rect, numPlayer: numPlayer)
+        drawScores(rect: rect, numPlayer: numPlayer)
     }
     
     func drawOuterSection(rect: CGRect, numPlayer: Int) {
 
-        let radius: CGFloat = 0.5 * max(bounds.width, bounds.height)
+        let radius: CGFloat = 0.5 * max(rect.width, rect.height)
 
         for section in 0...(numPlayer - 1) {
             let startAngle = .pi * CGFloat(0.5 + (-1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
@@ -34,6 +35,32 @@ class DonutView: UIView {
             outerPath.lineWidth = 0.5 * radius
             outerPath.stroke()
         }
+    }
+    
+    func drawScores(rect: CGRect, numPlayer: Int) {
+
+        let radius: CGFloat = 0.375 * max(rect.width, rect.height)
+        
+        for section in 0...(numPlayer - 1) {
+            let angle = .pi * CGFloat(0.5 + (2 * CGFloat(section)) / CGFloat(numPlayer))
+            let (x, y) = findArcMiddle(angle: angle, radius: radius)
+            let score = createAttributedStringForScore(section, fontSize: CGFloat(30))
+            score.draw(in: CGRect(x: x - 40, y: y - 20, width: 80, height: 40))
+        }
+    }
+    
+    private func findArcMiddle(angle: CGFloat, radius: CGFloat) -> (CGFloat, CGFloat) {
+        let x = radius * cos(angle) + bounds.midX
+        let y = radius * sin(angle) + bounds.midY
+        return (x, y)
+    }
+    
+    private func createAttributedStringForScore(_ score: Int, fontSize: CGFloat) ->NSAttributedString {
+        var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
+        font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        return NSAttributedString(string: "\(score)", attributes:[.paragraphStyle: paragraphStyle, .font: font])
     }
 }
 
