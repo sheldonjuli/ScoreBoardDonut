@@ -16,41 +16,47 @@ class DonutView: UIView {
     let colorOps = [ColorPool.Red, .Yellow, .Blue, .Green]
 
     override func draw(_ rect: CGRect) {
-        drawOuterSection(rect: rect, numPlayer: numPlayer)
-        drawScores(rect: rect, numPlayer: numPlayer)
-        drawOperators(rect: rect, numPlayer: numPlayer)
+        
+        drawBySections(rect: rect)
+
     }
     
-    func drawOuterSection(rect: CGRect, numPlayer: Int) {
+    private func drawBySections(rect: CGRect) {
+
+        for section in 0...(numPlayer - 1) {
+            drawOuterSection(rect: rect, section: section)
+            drawScores(rect: rect, section: section)
+            drawOperators(rect: rect, section: section)
+        }
+
+    }
+    
+    func drawOuterSection(rect: CGRect, section: Int) {
 
         let radius: CGFloat = 0.5 * max(rect.width, rect.height)
+        let startAngle = .pi * CGFloat(0.5 + (-1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
+        print(startAngle)
+        let endAngle = .pi * CGFloat(0.5 + (1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
+        UIColor(hex: colorOps[section].rawValue).setStroke()
+        
+        let outerPath = UIBezierPath(arcCenter: rect.center, radius: 0.75 * radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+        
+        outerPath.lineWidth = 0.5 * radius
+        outerPath.stroke()
 
-        for section in 0...(numPlayer - 1) {
-            let startAngle = .pi * CGFloat(0.5 + (-1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
-            print(startAngle)
-            let endAngle = .pi * CGFloat(0.5 + (1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
-            UIColor(hex: colorOps[section].rawValue).setStroke()
-
-            let outerPath = UIBezierPath(arcCenter: rect.center, radius: 0.75 * radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
-
-            outerPath.lineWidth = 0.5 * radius
-            outerPath.stroke()
-        }
     }
     
-    func drawScores(rect: CGRect, numPlayer: Int) {
+    func drawScores(rect: CGRect, section: Int) {
 
         let radius: CGFloat = 0.375 * max(rect.width, rect.height)
-        
-        for section in 0...(numPlayer - 1) {
-            let angle = .pi * CGFloat(0.5 + (2 * CGFloat(section)) / CGFloat(numPlayer))
-            let (x, y) = findCoordinatesOnArcWith(angle: angle, radius: radius)
-            let score = createAttributedStringForScore(section, fontSize: CGFloat(30))
-            score.draw(in: CGRect(x: x - 40, y: y - 20, width: 80, height: 40))
-        }
+        let angle = .pi * CGFloat(0.5 + (2 * CGFloat(section)) / CGFloat(numPlayer))
+        let (x, y) = findCoordinatesOnArcWith(angle: angle, radius: radius)
+        let score = createAttributedStringForScore(section, fontSize: CGFloat(30))
+        score.draw(in: CGRect(x: x - 40, y: y - 20, width: 80, height: 40))
+
     }
     
-    func drawOperators(rect: CGRect, numPlayer: Int) {
+    func drawOperators(rect: CGRect, section: Int) {
         
     }
     
