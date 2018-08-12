@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad10_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,18 +16,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Score_Board_Donut" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9P-eL-MCp" customClass="DonutView" customModule="Score_Board_Donut" customModuleProvider="target">
-                                <rect key="frame" x="10" y="156" width="355" height="355"/>
+                                <rect key="frame" x="10" y="149" width="814" height="814"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="X9P-eL-MCp" secondAttribute="height" multiplier="1:1" id="nD7-XA-mF0"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numPlayer">
-                                        <integer key="value" value="5"/>
+                                        <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -105,9 +105,10 @@
                         <constraints>
                             <constraint firstItem="X9P-eL-MCp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8FD-lF-fO3"/>
                             <constraint firstItem="Nq5-6b-NpH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Igt-3u-fVy"/>
-                            <constraint firstItem="X9P-eL-MCp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="T2B-Tl-kZw"/>
+                            <constraint firstItem="X9P-eL-MCp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="T2B-Tl-kZw"/>
                             <constraint firstItem="Nq5-6b-NpH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="l7z-CU-xF9"/>
                             <constraint firstItem="X9P-eL-MCp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tar-dS-BA1"/>
+                            <constraint firstItem="X9P-eL-MCp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="750" constant="10" id="zM5-BF-tfj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

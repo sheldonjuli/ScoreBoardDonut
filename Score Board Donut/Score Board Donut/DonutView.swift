@@ -15,7 +15,7 @@ class DonutView: UIView {
         static let StrikeProportion: CGFloat = 0.2
     }
     
-    //@IBInspectable
+    @IBInspectable
     var numPlayer: Int = 4 { didSet { setNeedsDisplay() } }
 
     let colorOps = [ColorPool.Red, .Yellow, .Blue, .Green, .Yellow]
