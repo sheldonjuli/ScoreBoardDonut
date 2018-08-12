@@ -27,22 +27,35 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numPlayer">
-                                        <integer key="value" value="3"/>
+                                        <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsG-DP-UCj">
+                                <rect key="frame" x="30" y="74" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="X9P-eL-MCp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8FD-lF-fO3"/>
+                            <constraint firstItem="LsG-DP-UCj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="FHl-Sk-9Bh"/>
                             <constraint firstItem="X9P-eL-MCp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="T2B-Tl-kZw"/>
+                            <constraint firstItem="LsG-DP-UCj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="hBy-lI-hhO"/>
                             <constraint firstItem="X9P-eL-MCp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tar-dS-BA1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="donutView" destination="X9P-eL-MCp" id="Ols-Ti-pqb"/>
+                        <outlet property="playerNumLabel" destination="LsG-DP-UCj" id="UxT-84-UAT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="42.857142857142861"/>
         </scene>
     </scenes>
 </document>
