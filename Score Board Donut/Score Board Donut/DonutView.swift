@@ -18,6 +18,7 @@ class DonutView: UIView {
     override func draw(_ rect: CGRect) {
         drawOuterSection(rect: rect, numPlayer: numPlayer)
         drawScores(rect: rect, numPlayer: numPlayer)
+        drawOperators(rect: rect, numPlayer: numPlayer)
     }
     
     func drawOuterSection(rect: CGRect, numPlayer: Int) {
@@ -43,16 +44,26 @@ class DonutView: UIView {
         
         for section in 0...(numPlayer - 1) {
             let angle = .pi * CGFloat(0.5 + (2 * CGFloat(section)) / CGFloat(numPlayer))
-            let (x, y) = findArcMiddle(angle: angle, radius: radius)
+            let (x, y) = findCoordinatesOnArcWith(angle: angle, radius: radius)
             let score = createAttributedStringForScore(section, fontSize: CGFloat(30))
             score.draw(in: CGRect(x: x - 40, y: y - 20, width: 80, height: 40))
         }
     }
     
-    private func findArcMiddle(angle: CGFloat, radius: CGFloat) -> (CGFloat, CGFloat) {
+    func drawOperators(rect: CGRect, numPlayer: Int) {
+        
+    }
+    
+    private func findCoordinatesOnArcWith(angle: CGFloat, radius: CGFloat) -> (CGFloat, CGFloat) {
         let x = radius * cos(angle) + bounds.midX
         let y = radius * sin(angle) + bounds.midY
         return (x, y)
+    }
+    
+    private func findDistanceBetween(pointA: CGPoint, pointB: CGPoint) -> CGFloat {
+        let xDist = pointA.x - pointB.x
+        let yDist = pointA.y - pointB.y
+        return CGFloat(sqrt((xDist * xDist) + (yDist * yDist)))
     }
     
     private func createAttributedStringForScore(_ score: Int, fontSize: CGFloat) ->NSAttributedString {
