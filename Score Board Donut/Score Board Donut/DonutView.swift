@@ -11,6 +11,10 @@ import UIKit
 @IBDesignable
 class DonutView: UIView {
     
+    private struct Constants {
+        static let StrikeProportion: CGFloat = 0.2
+    }
+    
     @IBInspectable var numPlayer: Int = 4
     
     let colorOps = [ColorPool.Red, .Yellow, .Blue, .Green]
@@ -26,7 +30,7 @@ class DonutView: UIView {
         for section in 0...(numPlayer - 1) {
             drawOuterSection(rect: rect, section: section)
             drawScores(rect: rect, section: section)
-            drawOperators(rect: rect, section: section)
+            //drawOperators(rect: rect, section: section)
         }
 
     }
@@ -35,7 +39,6 @@ class DonutView: UIView {
 
         let radius: CGFloat = 0.5 * max(rect.width, rect.height)
         let startAngle = .pi * CGFloat(0.5 + (-1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
-        print(startAngle)
         let endAngle = .pi * CGFloat(0.5 + (1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
         UIColor(hex: colorOps[section].rawValue).setStroke()
         
@@ -57,7 +60,26 @@ class DonutView: UIView {
     }
     
     func drawOperators(rect: CGRect, section: Int) {
+        let radius: CGFloat = 0.5 * max(rect.width, rect.height)
+        let startAngle = .pi * CGFloat(0.5 + (-1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
+        let endAngle = .pi * CGFloat(0.5 + (1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
+        let (startX, startY) = findCoordinatesOnArcWith(angle: startAngle, radius: radius)
+        let (endX, endY) = findCoordinatesOnArcWith(angle: endAngle, radius: radius)
         
+        let distance = findDistanceBetween(pointA: CGPoint(x: startX, y: startY), pointB: CGPoint(x: endX, y: endY))
+
+        let strikeLen = distance * Constants.StrikeProportion
+
+        let plusStrikeStart = CGPoint(x: (startX - endX) / Constants.StrikeProportion, y: (startY - endY) / Constants.StrikeProportion)
+        let plusStrikeEnd = CGPoint(x: plusStrikeStart.x + strikeLen, y: plusStrikeStart.y + startY)
+
+        let plusPath = UIBezierPath()
+        plusPath.lineWidth = 5
+        plusPath.move(to: CGPoint(x: startX, y: startY))
+        plusPath.addLine(to: CGPoint(x: endX, y: endY))
+        UIColor.gray.setStroke()
+        plusPath.stroke()
+
     }
     
     private func findCoordinatesOnArcWith(angle: CGFloat, radius: CGFloat) -> (CGFloat, CGFloat) {
