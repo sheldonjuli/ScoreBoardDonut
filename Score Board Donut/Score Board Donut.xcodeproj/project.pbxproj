@@ -15,6 +15,8 @@
 		241163DE211F2E9700B9056C /* DonutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241163DD211F2E9700B9056C /* DonutView.swift */; };
 		2455DC0E2120A6E7009656E5 /* ObjectModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455DC0D2120A6E7009656E5 /* ObjectModels.swift */; };
 		2455DC102120C58A009656E5 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2455DC0F2120C58A009656E5 /* profile.png */; };
+		2455DC122120CD8D009656E5 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 2455DC112120CD8D009656E5 /* add.png */; };
+		2455DC142120CE51009656E5 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 2455DC132120CE51009656E5 /* minus.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		241163DD211F2E9700B9056C /* DonutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutView.swift; sourceTree = "<group>"; };
 		2455DC0D2120A6E7009656E5 /* ObjectModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModels.swift; sourceTree = "<group>"; };
 		2455DC0F2120C58A009656E5 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		2455DC112120CD8D009656E5 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		2455DC132120CE51009656E5 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				241163DD211F2E9700B9056C /* DonutView.swift */,
 				2455DC0D2120A6E7009656E5 /* ObjectModels.swift */,
 				2455DC0F2120C58A009656E5 /* profile.png */,
+				2455DC112120CD8D009656E5 /* add.png */,
+				2455DC132120CE51009656E5 /* minus.png */,
 				241163CF211F2DDB00B9056C /* Main.storyboard */,
 				241163D2211F2DDE00B9056C /* Assets.xcassets */,
 				241163D4211F2DDE00B9056C /* LaunchScreen.storyboard */,
@@ -133,7 +139,9 @@
 			files = (
 				241163D6211F2DDE00B9056C /* LaunchScreen.storyboard in Resources */,
 				241163D3211F2DDE00B9056C /* Assets.xcassets in Resources */,
+				2455DC142120CE51009656E5 /* minus.png in Resources */,
 				241163D1211F2DDB00B9056C /* Main.storyboard in Resources */,
+				2455DC122120CD8D009656E5 /* add.png in Resources */,
 				2455DC102120C58A009656E5 /* profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

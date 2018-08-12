@@ -34,25 +34,38 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Nq5-6b-NpH">
                                 <rect key="frame" x="10" y="50" width="120" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrD-ug-b5g">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrD-ug-b5g">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.77676856517791748" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="FXF-lJ-FGZ"/>
                                             <constraint firstAttribute="width" constant="30" id="VxP-sO-6tW"/>
                                         </constraints>
-                                        <state key="normal" title="-">
+                                        <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                        <state key="normal" image="minus.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="zvi-TS-zd6">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpq-Ld-4QL">
                                         <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="zvi-TS-zd6">
+                                                <rect key="frame" x="2.5" y="2.5" width="25" height="25"/>
+                                                <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="25" id="1pc-1d-VyQ"/>
+                                                    <constraint firstAttribute="height" constant="25" id="gMC-7D-4fE"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="1pc-1d-VyQ"/>
-                                            <constraint firstAttribute="height" constant="30" id="gMC-7D-4fE"/>
+                                            <constraint firstAttribute="width" constant="30" id="YVQ-4b-5UQ"/>
+                                            <constraint firstItem="zvi-TS-zd6" firstAttribute="centerY" secondItem="gpq-Ld-4QL" secondAttribute="centerY" id="lns-mE-uXk"/>
+                                            <constraint firstItem="zvi-TS-zd6" firstAttribute="centerX" secondItem="gpq-Ld-4QL" secondAttribute="centerX" id="p5s-9E-FDC"/>
+                                            <constraint firstAttribute="height" constant="30" id="zoy-EZ-6HH"/>
                                         </constraints>
-                                    </imageView>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsG-DP-UCj">
                                         <rect key="frame" x="60" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
@@ -60,22 +73,26 @@
                                             <constraint firstAttribute="width" constant="30" id="bmc-AK-x9O"/>
                                             <constraint firstAttribute="height" constant="30" id="sWS-x2-Wt3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEM-aa-Nu7">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEM-aa-Nu7">
                                         <rect key="frame" x="90" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.77676856517791748" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="2dG-5Y-Zfh"/>
                                             <constraint firstAttribute="height" constant="30" id="fK9-18-bjs"/>
                                         </constraints>
-                                        <state key="normal" title="+">
+                                        <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                        <state key="normal" image="add.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="gpq-Ld-4QL" firstAttribute="top" secondItem="Nq5-6b-NpH" secondAttribute="top" id="87P-PR-4wf"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -95,10 +112,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="42.857142857142861"/>
+            <point key="canvasLocation" x="32.799999999999997" y="42.728635682158924"/>
         </scene>
     </scenes>
     <resources>
+        <image name="add.png" width="512" height="512"/>
+        <image name="minus.png" width="512" height="512"/>
         <image name="profile.png" width="512" height="512"/>
     </resources>
 </document>
