@@ -12,20 +12,37 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var donutView: DonutView!
     @IBOutlet weak var playerNumLabel: UILabel!
+    @IBOutlet weak var playerNumUpButton: UIButton!
+    @IBOutlet weak var PlayerNumDownButton: UIButton!
+    
     
     private lazy var game: Game = Game(numPlayer: numPlayer)
     
-    var numPlayer: Int = 3
+    var numPlayer: Int = 4 {
+        didSet {
+            donutView.numPlayer = numPlayer
+            playerNumLabel.text = "\(numPlayer)"
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        donutView.numPlayer = numPlayer
-        playerNumLabel.text = "\(numPlayer)"
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func editPlayerNum(_ sender: UIButton) {
+        
+        if sender == PlayerNumDownButton, numPlayer > 1 {
+            numPlayer -= 1
+        } else if sender == playerNumUpButton {
+            if numPlayer < 4 {
+                numPlayer += 1
+            }
+        }
     }
 }
 

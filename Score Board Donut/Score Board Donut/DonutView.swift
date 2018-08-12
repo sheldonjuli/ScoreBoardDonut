@@ -16,7 +16,7 @@ class DonutView: UIView {
     }
     
     //@IBInspectable
-    var numPlayer: Int = 4
+    var numPlayer: Int = 4 { didSet { setNeedsDisplay() } }
 
     let colorOps = [ColorPool.Red, .Yellow, .Blue, .Green, .Yellow]
 

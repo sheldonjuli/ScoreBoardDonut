@@ -45,6 +45,9 @@
                                         <state key="normal" image="minus.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="editPlayerNum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s6e-M7-H6r"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpq-Ld-4QL">
                                         <rect key="frame" x="30" y="0.0" width="30" height="30"/>
@@ -88,6 +91,9 @@
                                         <state key="normal" image="add.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="editPlayerNum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="55T-jG-NMY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -106,13 +112,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="PlayerNumDownButton" destination="VrD-ug-b5g" id="IYP-gI-YSM"/>
                         <outlet property="donutView" destination="X9P-eL-MCp" id="Ols-Ti-pqb"/>
                         <outlet property="playerNumLabel" destination="LsG-DP-UCj" id="UxT-84-UAT"/>
+                        <outlet property="playerNumUpButton" destination="lEM-aa-Nu7" id="O5E-MM-X2R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="42.728635682158924"/>
+            <point key="canvasLocation" x="-146" y="34"/>
         </scene>
     </scenes>
     <resources>
