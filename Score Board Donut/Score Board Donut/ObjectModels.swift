@@ -29,11 +29,11 @@ struct Player {
     }
 }
 
-class Board {
+class Game {
     var players = [Player]()
     
-    init(playerNum : Int) {
-        for _ in 1...playerNum {
+    init(numPlayer : Int) {
+        for _ in 1...numPlayer {
             let player = Player()
             players += [player]
         }

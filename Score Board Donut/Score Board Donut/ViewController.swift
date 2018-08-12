@@ -13,12 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var donutView: DonutView!
     @IBOutlet weak var playerNumLabel: UILabel!
     
-     
+    private lazy var game: Game = Game(numPlayer: numPlayer)
     
+    var numPlayer: Int = 3
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        donutView.numPlayer = 3
-        playerNumLabel.text = "\(donutView.numPlayer)"
+        donutView.numPlayer = numPlayer
+        playerNumLabel.text = "\(numPlayer)"
     }
 
     override func didReceiveMemoryWarning() {
