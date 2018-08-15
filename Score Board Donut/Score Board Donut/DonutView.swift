@@ -116,10 +116,10 @@ class DonutView: UIView {
 enum ColorPool : String {
     case White = "FFFFFF"
     case LightGrey = "F0F0F0"
-    case Red = "FF0000"
-    case Yellow = "FFFF00"
-    case Blue = "0000FF"
-    case Green = "008000"
+    case Red = "FF6D68"
+    case Yellow = "FFC843"
+    case Blue = "5E96DC"
+    case Green = "009638"
     
 }
 
