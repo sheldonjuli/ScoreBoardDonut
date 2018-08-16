@@ -53,18 +53,8 @@ class DonutView: UIView {
             drawScores(rect: rect, section: section)
             //drawOperators(rect: rect, section: section)
         }
-        
-        drawPause(rect: rect)
+    }
 
-    }
-    
-    func drawPause(rect: CGRect) {
-        let circlePath = UIBezierPath(arcCenter: rect.center, radius: 0.5 * CGFloat(rect.maxX - rect.midX), startAngle: CGFloat(0), endAngle: .pi, clockwise: true)
-        circlePath.addClip()
-        UIColor(hex: ColorPool.LightGrey.rawValue).setFill()
-        circlePath.fill()
-    }
-    
     func drawOuterSection(rect: CGRect, section: Int) {
 
         let radius: CGFloat = 0.5 * max(rect.width, rect.height)
