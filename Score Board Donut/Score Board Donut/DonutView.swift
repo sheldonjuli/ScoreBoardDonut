@@ -17,6 +17,26 @@ class DonutView: UIView {
     
     @IBInspectable
     var numPlayer: Int = 4 { didSet { setNeedsDisplay() } }
+    
+    private lazy var scoreLabels: [UILabel] = createScoreLabels(numPlayer: numPlayer)
+    
+    private func createScoreLabels(numPlayer: Int) -> [UILabel] {
+        var scoreLabels: [UILabel] = []
+        for _ in 0...numPlayer {
+            let newLabel = UILabel()
+            scoreLabels.append(newLabel)
+            addSubview(newLabel)
+        }
+        return scoreLabels
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        for section in 0...numPlayer {
+//            position labels
+//            scoreLabels[section].frame.origin
+        }
+    }
 
     let colorOps = [ColorPool.Red, .Yellow, .Blue, .Green, .Yellow]
 
@@ -58,7 +78,7 @@ class DonutView: UIView {
         outerPath.stroke()
 
     }
-    
+
     func drawScores(rect: CGRect, section: Int) {
 
         let radius: CGFloat = 0.375 * max(rect.width, rect.height)
@@ -66,7 +86,6 @@ class DonutView: UIView {
         let (x, y) = findCoordinatesOnArcWith(angle: angle, radius: radius)
         let score = createAttributedStringForScore(section, fontSize: CGFloat(30))
         score.draw(in: CGRect(x: x - 40, y: y - 20, width: 80, height: 40))
-
     }
     
     func drawOperators(rect: CGRect, section: Int) {

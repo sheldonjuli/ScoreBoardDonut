@@ -19,18 +19,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9P-eL-MCp" customClass="DonutView" customModule="Score_Board_Donut" customModuleProvider="target">
-                                <rect key="frame" x="10" y="171" width="394" height="394"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="X9P-eL-MCp" secondAttribute="height" multiplier="1:1" id="nD7-XA-mF0"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="numPlayer">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03n-gm-bEc">
+                                <rect key="frame" x="10" y="111" width="71" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Nq5-6b-NpH">
                                 <rect key="frame" x="10" y="50" width="120" height="30"/>
                                 <subviews>
@@ -100,6 +95,26 @@
                                     <constraint firstItem="gpq-Ld-4QL" firstAttribute="top" secondItem="Nq5-6b-NpH" secondAttribute="top" id="87P-PR-4wf"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9P-eL-MCp" customClass="DonutView" customModule="Score_Board_Donut" customModuleProvider="target">
+                                <rect key="frame" x="10" y="171" width="394" height="394"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="X9P-eL-MCp" secondAttribute="height" multiplier="1:1" id="nD7-XA-mF0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="numPlayer">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dl7-cQ-MyI">
+                                <rect key="frame" x="75" y="106" width="73" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playPauseTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k5P-0I-zHO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -115,13 +130,15 @@
                     <connections>
                         <outlet property="PlayerNumDownButton" destination="VrD-ug-b5g" id="IYP-gI-YSM"/>
                         <outlet property="donutView" destination="X9P-eL-MCp" id="Ols-Ti-pqb"/>
+                        <outlet property="playPauseButton" destination="Dl7-cQ-MyI" id="ykw-j6-x6d"/>
                         <outlet property="playerNumLabel" destination="LsG-DP-UCj" id="UxT-84-UAT"/>
                         <outlet property="playerNumUpButton" destination="lEM-aa-Nu7" id="O5E-MM-X2R"/>
+                        <outlet property="stopWatchLabel" destination="03n-gm-bEc" id="G75-xK-UFL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-146" y="34"/>
+            <point key="canvasLocation" x="-146.37681159420291" y="33.423913043478265"/>
         </scene>
     </scenes>
     <resources>
