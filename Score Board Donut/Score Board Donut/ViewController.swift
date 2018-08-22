@@ -47,6 +47,7 @@ class ViewController: UIViewController {
         if game.players.count > 0 {
             for playerIndex in 0...game.players.count - 1 {
                 donutView.scores.append(game.players[playerIndex].score)
+
             }
         }
     }
