@@ -18,7 +18,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var stopWatchLabel: UILabel!
     @IBOutlet weak var playPauseButton: UIButton!
-
+    @IBOutlet weak var resetTimeButton: UIButton!
+    
     fileprivate let stopWatch: Stopwatch = Stopwatch()
     fileprivate var isPlay: Bool = false
     
@@ -81,17 +82,19 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func resetTimer(_ sender: Any) {
+        stopWatch.timer.invalidate()
+        stopWatch.counter = 0.0
+        stopWatchLabel.text = "00:00"
+        isPlay = false
+        changeButton(playPauseButton, title: "Start", titleColor: UIColor.green)
+    }
+
     fileprivate func changeButton(_ button: UIButton, title: String, titleColor: UIColor) {
         button.setTitle(title, for: UIControlState())
         button.setTitleColor(titleColor, for: UIControlState())
     }
-    
-    fileprivate func resetTimer() {
-        stopWatch.timer.invalidate()
-        stopWatch.counter = 0.0
-        stopWatchLabel.text = "00:00"
-    }
-    
+
     @objc func updateTimer() {
         stopWatch.counter = stopWatch.counter + 0.035
         

@@ -125,6 +125,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                                         <state key="normal" title="Button" image="timeRefresh.png"/>
+                                        <connections>
+                                            <action selector="resetTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Ba-OQ-YhC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABb-j5-TvW">
                                         <rect key="frame" x="86.666666666666657" y="2.3333333333333712" width="37.333333333333343" height="36.666666666666664"/>
@@ -164,6 +167,7 @@
                         <outlet property="playPauseButton" destination="Dl7-cQ-MyI" id="ykw-j6-x6d"/>
                         <outlet property="playerNumLabel" destination="LsG-DP-UCj" id="UxT-84-UAT"/>
                         <outlet property="playerNumUpButton" destination="lEM-aa-Nu7" id="O5E-MM-X2R"/>
+                        <outlet property="resetTimeButton" destination="GW3-1B-ZbT" id="G27-z3-dpP"/>
                         <outlet property="stopWatchLabel" destination="03n-gm-bEc" id="G75-xK-UFL"/>
                     </connections>
                 </viewController>
