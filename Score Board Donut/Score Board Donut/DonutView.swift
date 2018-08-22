@@ -18,6 +18,8 @@ class DonutView: UIView {
     @IBInspectable
     var numPlayer: Int = 4 { didSet { setNeedsDisplay() } }
     
+    var scores: [Int] = [Int]() { didSet { setNeedsDisplay() } }
+
     private lazy var scoreLabels: [UILabel] = createScoreLabels(numPlayer: numPlayer)
     
     private func createScoreLabels(numPlayer: Int) -> [UILabel] {
@@ -71,11 +73,13 @@ class DonutView: UIView {
 
     func drawScores(rect: CGRect, section: Int) {
 
-        let radius: CGFloat = 0.375 * max(rect.width, rect.height)
-        let angle = .pi * CGFloat(0.5 + (2 * CGFloat(section)) / CGFloat(numPlayer))
-        let (x, y) = findCoordinatesOnArcWith(angle: angle, radius: radius)
-        let score = createAttributedStringForScore(section, fontSize: CGFloat(30))
-        score.draw(in: CGRect(x: x - 40, y: y - 20, width: 80, height: 40))
+        if scores.count > 0 {
+            let radius: CGFloat = 0.375 * max(rect.width, rect.height)
+            let angle = .pi * CGFloat(0.5 + (2 * CGFloat(section)) / CGFloat(numPlayer))
+            let (x, y) = findCoordinatesOnArcWith(angle: angle, radius: radius)
+            let score = createAttributedStringForScore(scores[section], fontSize: CGFloat(30))
+            score.draw(in: CGRect(x: x - 40, y: y - 20, width: 80, height: 40))
+        }
     }
     
     func drawOperators(rect: CGRect, section: Int) {

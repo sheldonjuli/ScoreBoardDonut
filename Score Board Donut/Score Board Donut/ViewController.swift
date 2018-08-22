@@ -34,11 +34,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateDonutView()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func updateDonutView() {
+        if game.players.count > 0 {
+            for playerIndex in 0...game.players.count - 1 {
+                donutView.scores.append(game.players[playerIndex].score)
+            }
+        }
     }
     
     @IBAction func editPlayerNum(_ sender: UIButton) {
