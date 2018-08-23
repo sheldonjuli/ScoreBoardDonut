@@ -137,6 +137,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                                         <state key="normal" title="Reset" image="reset.png"/>
+                                        <connections>
+                                            <action selector="resetScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gbO-7i-yRj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -167,6 +170,7 @@
                         <outlet property="playPauseButton" destination="Dl7-cQ-MyI" id="ykw-j6-x6d"/>
                         <outlet property="playerNumLabel" destination="LsG-DP-UCj" id="UxT-84-UAT"/>
                         <outlet property="playerNumUpButton" destination="lEM-aa-Nu7" id="O5E-MM-X2R"/>
+                        <outlet property="resetScoreButton" destination="ABb-j5-TvW" id="x6N-Kr-jrN"/>
                         <outlet property="resetTimeButton" destination="GW3-1B-ZbT" id="G27-z3-dpP"/>
                         <outlet property="stopWatchLabel" destination="03n-gm-bEc" id="G75-xK-UFL"/>
                     </connections>

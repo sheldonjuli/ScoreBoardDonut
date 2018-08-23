@@ -38,6 +38,14 @@ class Game {
             players += [player]
         }
     }
+    
+    func resetPlayerScore() {
+        if players.count > 0 {
+            for index in 0...players.count - 1 {
+                players[index].score = 0
+            }
+        }
+    }
 }
 
 class Stopwatch: NSObject {

@@ -19,10 +19,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var stopWatchLabel: UILabel!
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var resetTimeButton: UIButton!
+    @IBOutlet weak var resetScoreButton: UIButton!
     
     fileprivate let stopWatch: Stopwatch = Stopwatch()
     fileprivate var isPlay: Bool = false
-    
+
     var numPlayer: Int = 4 {
         didSet {
             donutView.numPlayer = numPlayer
@@ -46,6 +47,7 @@ class ViewController: UIViewController {
     
     private func updateDonutView() {
         if game.players.count > 0 {
+            donutView.scores = [Int]()
             for playerIndex in 0...game.players.count - 1 {
                 donutView.scores.append(game.players[playerIndex].score)
 
@@ -111,6 +113,10 @@ class ViewController: UIViewController {
         stopWatchLabel.text = minutes + ":" + seconds
     }
 
+    @IBAction func resetScore(_ sender: Any) {
+        game.resetPlayerScore()
+        updateDonutView()
+    }
 }
 
 fileprivate extension Selector {
