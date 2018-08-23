@@ -36,8 +36,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         updateDonutView()
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(updatePlayerScore))
+        
+        donutView.addGestureRecognizer(tapRecognizer)
+    }
+    
+    @objc private func updatePlayerScore(_ sender: UITapGestureRecognizer) {
+        let tappedPoint = sender.location(in: donutView)
+        print(tappedPoint)
     }
 
     override func didReceiveMemoryWarning() {
