@@ -42,3 +42,30 @@ extension UIColor {
         )
     }
 }
+
+func findDistanceBetween(pointA: CGPoint, pointB: CGPoint) -> CGFloat {
+    let xDist = pointA.x - pointB.x
+    let yDist = pointA.y - pointB.y
+    return CGFloat(sqrt((xDist * xDist) + (yDist * yDist)))
+}
+
+func findLongerSideLen(rect: CGRect) -> CGFloat {
+    return max(rect.width, rect.height)
+}
+
+func findDegreeOffsetBetween(pointA: CGPoint, pointB: CGPoint) -> CGFloat {
+    let degreeOffset = atan2(pointA.y - pointB.y, pointA.x - pointB.x)
+    return degreeOffset > 0 ? degreeOffset : degreeOffset + 2 * CGFloat.pi
+}
+
+func findSectionWidth(numPlayer: Int) -> CGFloat {
+    return 2 * CGFloat.pi / CGFloat(numPlayer)
+}
+
+func findStartAngle(numPlayer: Int, section: Int) -> CGFloat {
+    return .pi * CGFloat(0.5 + (-1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
+}
+
+func findEndAngle(numPlayer: Int, section: Int) -> CGFloat {
+    return .pi * CGFloat(0.5 + (1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
+}

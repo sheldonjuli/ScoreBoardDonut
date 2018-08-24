@@ -59,9 +59,9 @@ class DonutView: UIView {
 
     func drawOuterSection(rect: CGRect, section: Int) {
 
-        let radius: CGFloat = 0.5 * max(rect.width, rect.height)
-        let startAngle = .pi * CGFloat(0.5 + (-1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
-        let endAngle = .pi * CGFloat(0.5 + (1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
+        let radius: CGFloat = 0.5 * findLongerSideLen(rect: rect)
+        let startAngle = findStartAngle(numPlayer: numPlayer, section: section)
+        let endAngle = findEndAngle(numPlayer: numPlayer, section: section)
         UIColor(hex: colorOps[section].rawValue).setStroke()
         
         let outerPath = UIBezierPath(arcCenter: rect.center, radius: 0.75 * radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
@@ -109,12 +109,6 @@ class DonutView: UIView {
         let x = radius * cos(angle) + bounds.midX
         let y = radius * sin(angle) + bounds.midY
         return (x, y)
-    }
-    
-    private func findDistanceBetween(pointA: CGPoint, pointB: CGPoint) -> CGFloat {
-        let xDist = pointA.x - pointB.x
-        let yDist = pointA.y - pointB.y
-        return CGFloat(sqrt((xDist * xDist) + (yDist * yDist)))
     }
     
     private func createAttributedStringForScore(_ score: Int, fontSize: CGFloat) ->NSAttributedString {

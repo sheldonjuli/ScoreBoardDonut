@@ -45,7 +45,34 @@ class ViewController: UIViewController {
     
     @objc private func updatePlayerScore(_ sender: UITapGestureRecognizer) {
         let tappedPoint = sender.location(in: donutView)
-        print(tappedPoint)
+        let (section, scoreChange) = determineSection(tappedPoint: tappedPoint)
+        game.players[section].score += scoreChange
+        updateDonutView()
+    }
+    
+    private func determineSection(tappedPoint: CGPoint) -> (Int, Int) {
+
+        let donutViewRect = donutView.bounds
+        let tapDis = findDistanceBetween(pointA: tappedPoint, pointB: donutViewRect.center)
+        let sideLen = findLongerSideLen(rect: donutViewRect)
+        
+        // If tapped in the circle
+        if sideLen / 4 <= tapDis, tapDis <= sideLen / 2 {
+
+            // find degree of tapped points in the coordinate system
+            let sectionDegreeWidth = findSectionWidth(numPlayer: numPlayer)
+            let startAngle = findStartAngle(numPlayer: numPlayer, section: 0)
+            var degreeOffset = findDegreeOffsetBetween(pointA: tappedPoint, pointB: donutViewRect.center)
+            degreeOffset = degreeOffset < startAngle ? degreeOffset + (2 * .pi) : degreeOffset
+            degreeOffset -= startAngle
+
+            let section = (degreeOffset / sectionDegreeWidth).rounded(.down)
+            let operation = ((degreeOffset / (0.5 * sectionDegreeWidth)).rounded(.down)).truncatingRemainder(dividingBy: 2)
+            let scoreChange = operation == 0 ? 1 : -1
+            return (Int(section), scoreChange)
+        }
+
+        return (0, 0)
     }
 
     override func didReceiveMemoryWarning() {
