@@ -12,15 +12,28 @@ import UIKit
 class DonutView: UIView {
     
     @IBInspectable
-    var numPlayer: Int = 4 { didSet { setNeedsDisplay(); setNeedsLayout() } }
+    var numPlayer: Int = 4 {
+        didSet {
+            setNeedsDisplay()
+            setNeedsLayout()
+            
+            // recreate all labels
+            scoreLabels = createScoreLabels(numPlayer: numPlayer)
+        }
+    }
     
     var scores: [Int] = [Int]() { didSet { setNeedsDisplay(); setNeedsLayout() } }
 
     private lazy var scoreLabels: [UILabel] = createScoreLabels(numPlayer: numPlayer)
     
     private func createScoreLabels(numPlayer: Int) -> [UILabel] {
+        
+        // remove all labels from superview first
+        // self.subviews.forEach({ $0.removeFromSuperview() })
+        
+        // create labels
         var scoreLabels: [UILabel] = []
-        for _ in 0...numPlayer {
+        for _ in 0...numPlayer - 1 {
             let newLabel = UILabel()
             scoreLabels.append(newLabel)
             addSubview(newLabel)
@@ -111,6 +124,10 @@ class DonutView: UIView {
         let h = Constants.scoreLabelHeightToArcRadiusRatio * radius
         let w = Constants.scoreLabelWidthToHeightRatio * h
         label.frame = CGRect(x: x - w / 2, y: y - h / 2, width: w, height: h)
+//        label.transform = CGAffineTransform.identity
+//            .translatedBy(x: w, y: h)
+//            .rotated(by: angle - (.pi / CGFloat(numPlayer)))
+        
     }
 }
 
