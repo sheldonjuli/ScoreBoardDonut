@@ -11,14 +11,10 @@ import UIKit
 @IBDesignable
 class DonutView: UIView {
     
-    private struct Constants {
-        static let StrikeProportion: CGFloat = 0.2
-    }
-    
     @IBInspectable
-    var numPlayer: Int = 4 { didSet { setNeedsDisplay() } }
+    var numPlayer: Int = 4 { didSet { setNeedsDisplay(); setNeedsLayout() } }
     
-    var scores: [Int] = [Int]() { didSet { setNeedsDisplay() } }
+    var scores: [Int] = [Int]() { didSet { setNeedsDisplay(); setNeedsLayout() } }
 
     private lazy var scoreLabels: [UILabel] = createScoreLabels(numPlayer: numPlayer)
     
@@ -34,13 +30,12 @@ class DonutView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        for section in 0...numPlayer {
-//            position labels
-//            scoreLabels[section].frame.origin
+        for section in 0...numPlayer - 1 {
+            configureScoreLabel(scoreLabels[section], section: section, score: scores[section])
         }
     }
 
-    let colorOps = [ColorPool.Red, .Yellow, .Blue, .Green, .Yellow]
+    let colorOps = [ColorPool.Red, .Yellow, .Blue, .Green]
 
     override func draw(_ rect: CGRect) {
         
@@ -52,7 +47,6 @@ class DonutView: UIView {
 
         for section in 0...(numPlayer - 1) {
             drawOuterSection(rect: rect, section: section)
-            drawScores(rect: rect, section: section)
             //drawOperators(rect: rect, section: section)
         }
     }
@@ -69,17 +63,6 @@ class DonutView: UIView {
         outerPath.lineWidth = 0.5 * radius
         outerPath.stroke()
 
-    }
-
-    func drawScores(rect: CGRect, section: Int) {
-
-        if scores.count > 0 {
-            let radius: CGFloat = 0.375 * max(rect.width, rect.height)
-            let angle = .pi * CGFloat(0.5 + (2 * CGFloat(section)) / CGFloat(numPlayer))
-            let (x, y) = findCoordinatesOnArcWith(angle: angle, radius: radius)
-            let score = createAttributedStringForScore(scores[section], fontSize: CGFloat(30))
-            score.draw(in: CGRect(x: x - 40, y: y - 20, width: 80, height: 40))
-        }
     }
     
     func drawOperators(rect: CGRect, section: Int) {
@@ -111,11 +94,35 @@ class DonutView: UIView {
         return (x, y)
     }
     
-    private func createAttributedStringForScore(_ score: Int, fontSize: CGFloat) ->NSAttributedString {
-        var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
+    private func createAttributedStringForScore(_ score: Int) ->NSAttributedString {
+        var font = UIFont.preferredFont(forTextStyle: .body).withSize(scoreFontSize)
         font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
         return NSAttributedString(string: "\(score)", attributes:[.paragraphStyle: paragraphStyle, .font: font])
+    }
+    
+    private func configureScoreLabel(_ label: UILabel, section: Int, score: Int) {
+        label.attributedText = createAttributedStringForScore(score)
+        label.backgroundColor = UIColor(hex: colorOps[0].rawValue)
+        let radius: CGFloat = 0.375 * max(bounds.width, bounds.height)
+        let angle = .pi * CGFloat(0.5 + (2 * CGFloat(section)) / CGFloat(numPlayer))
+        let (x, y) = findCoordinatesOnArcWith(angle: angle, radius: radius)
+        let h = Constants.scoreLabelHeightToArcRadiusRatio * radius
+        let w = Constants.scoreLabelWidthToHeightRatio * h
+        label.frame = CGRect(x: x - w / 2, y: y - h / 2, width: w, height: h)
+    }
+}
+
+extension DonutView {
+    private struct Constants {
+        static let StrikeProportion: CGFloat = 0.2
+        static let scoreFontSizeToBoundsSizeRatio: CGFloat = 0.06
+        static let scoreLabelHeightToArcRadiusRatio: CGFloat = 0.25
+        static let scoreLabelWidthToHeightRatio: CGFloat = 2
+    }
+    
+    private var scoreFontSize: CGFloat {
+        return bounds.size.height * Constants.scoreFontSizeToBoundsSizeRatio
     }
 }
