@@ -17,7 +17,8 @@ class DonutView: UIView {
             setNeedsDisplay(); setNeedsLayout()
             
             // recreate all labels
-            scoreLabels.forEach({ $0.removeFromSuperview() })
+            scoreLabels.forEach({ $0.removeFromSuperview(); setNeedsLayout() })
+            newLabelCreated = 0
             scoreLabels = createScoreLabels(numPlayer: numPlayer)
         }
     }
@@ -25,6 +26,8 @@ class DonutView: UIView {
     var scores: [Int] = [Int]() { didSet { setNeedsDisplay(); setNeedsLayout() } }
 
     private lazy var scoreLabels: [UILabel] = createScoreLabels(numPlayer: numPlayer)
+    
+    private var newLabelCreated: Int = 0
     
     private func createScoreLabels(numPlayer: Int) -> [UILabel] {
         
@@ -39,10 +42,12 @@ class DonutView: UIView {
     }
     
     override func layoutSubviews() {
+
         super.layoutSubviews()
         for section in 0...numPlayer - 1 {
             configureScoreLabel(scoreLabels[section], section: section, score: scores[section])
         }
+
     }
 
     let colorOps = [ColorPool.Red, .Yellow, .Blue, .Green]
@@ -113,18 +118,23 @@ class DonutView: UIView {
     }
     
     private func configureScoreLabel(_ label: UILabel, section: Int, score: Int) {
+        
         label.attributedText = createAttributedStringForScore(score)
         label.backgroundColor = UIColor(hex: colorOps[0].rawValue)
-        let radius: CGFloat = 0.375 * max(bounds.width, bounds.height)
-        let angle = .pi * CGFloat(0.5 + (2 * CGFloat(section)) / CGFloat(numPlayer))
-        let (x, y) = findCoordinatesOnArcWith(angle: angle, radius: radius)
-        let h = Constants.scoreLabelHeightToArcRadiusRatio * radius
-        let w = Constants.scoreLabelWidthToHeightRatio * h
-        label.frame = CGRect(x: x - w / 2, y: y - h / 2, width: w, height: h)
-//        label.transform = CGAffineTransform.identity
-//            .translatedBy(x: w, y: h)
-//            .rotated(by: angle - (.pi / CGFloat(numPlayer)))
         
+        if newLabelCreated < numPlayer {
+
+            let radius: CGFloat = 0.375 * max(bounds.width, bounds.height)
+            let angle = .pi * CGFloat(0.5 + (2 * CGFloat(section)) / CGFloat(numPlayer))
+            let (x, y) = findCoordinatesOnArcWith(angle: angle, radius: radius)
+            let h = Constants.scoreLabelHeightToArcRadiusRatio * radius
+            let w = Constants.scoreLabelWidthToHeightRatio * h
+            label.frame = CGRect(x: x - w / 2, y: y - h / 2, width: w, height: h)
+            label.transform = CGAffineTransform.identity
+                .rotated(by: CGFloat(section) * (2 * .pi / CGFloat(numPlayer)) )
+            
+            newLabelCreated += 1
+        }
     }
 }
 
