@@ -21,6 +21,8 @@
 		2455DC142120CE51009656E5 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 2455DC132120CE51009656E5 /* minus.png */; };
 		24743E19212C07F100CE230E /* DrawUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24743E18212C07F100CE230E /* DrawUtils.swift */; };
 		24B0B1EC212639E6007B7F6F /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0B1EB212639E6007B7F6F /* TimerView.swift */; };
+		24D4553A2133EC6B00006FE2 /* timer-play.png in Resources */ = {isa = PBXBuildFile; fileRef = 24D455392133EC6B00006FE2 /* timer-play.png */; };
+		24D4553C2133EDBD00006FE2 /* timer-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 24D4553B2133EDBD00006FE2 /* timer-pause.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		2455DC132120CE51009656E5 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
 		24743E18212C07F100CE230E /* DrawUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawUtils.swift; sourceTree = "<group>"; };
 		24B0B1EB212639E6007B7F6F /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		24D455392133EC6B00006FE2 /* timer-play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer-play.png"; sourceTree = "<group>"; };
+		24D4553B2133EDBD00006FE2 /* timer-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer-pause.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				2455DC132120CE51009656E5 /* minus.png */,
 				24315127212D5AA900E53079 /* timeRefresh.png */,
 				24315129212D5B5B00E53079 /* reset.png */,
+				24D455392133EC6B00006FE2 /* timer-play.png */,
+				24D4553B2133EDBD00006FE2 /* timer-pause.png */,
 				241163CF211F2DDB00B9056C /* Main.storyboard */,
 				241163D2211F2DDE00B9056C /* Assets.xcassets */,
 				241163D4211F2DDE00B9056C /* LaunchScreen.storyboard */,
@@ -149,6 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24D4553A2133EC6B00006FE2 /* timer-play.png in Resources */,
 				24315128212D5AA900E53079 /* timeRefresh.png in Resources */,
 				241163D6211F2DDE00B9056C /* LaunchScreen.storyboard in Resources */,
 				241163D3211F2DDE00B9056C /* Assets.xcassets in Resources */,
@@ -156,6 +163,7 @@
 				241163D1211F2DDB00B9056C /* Main.storyboard in Resources */,
 				2455DC122120CD8D009656E5 /* add.png in Resources */,
 				2455DC102120C58A009656E5 /* profile.png in Resources */,
+				24D4553C2133EDBD00006FE2 /* timer-pause.png in Resources */,
 				2431512A212D5B5B00E53079 /* reset.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

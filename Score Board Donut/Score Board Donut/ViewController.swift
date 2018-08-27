@@ -110,12 +110,12 @@ class ViewController: UIViewController {
             RunLoop.current.add(stopWatch.timer, forMode: .commonModes)
             
             isPlay = true
-            changeButton(playPauseButton, title: "Stop", titleColor: UIColor.red)
+            changeButton(playPauseButton, imageName: "timer-pause.png", titleColor: UIColor.red)
         } else {
             
             stopWatch.timer.invalidate()
             isPlay = false
-            changeButton(playPauseButton, title: "Start", titleColor: UIColor.green)
+            changeButton(playPauseButton, imageName: "timer-play.png", titleColor: UIColor.green)
         }
     }
     
@@ -124,12 +124,11 @@ class ViewController: UIViewController {
         stopWatch.counter = 0.0
         stopWatchLabel.text = "00:00"
         isPlay = false
-        changeButton(playPauseButton, title: "Start", titleColor: UIColor.green)
+        changeButton(playPauseButton, imageName: "timer-play.png", titleColor: UIColor.green)
     }
 
-    fileprivate func changeButton(_ button: UIButton, title: String, titleColor: UIColor) {
-        button.setTitle(title, for: UIControlState())
-        button.setTitleColor(titleColor, for: UIControlState())
+    fileprivate func changeButton(_ button: UIButton, imageName: String, titleColor: UIColor) {
+        button.setImage(UIImage(named: imageName), for: UIControlState())
     }
 
     @objc func updateTimer() {

@@ -81,48 +81,61 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3hg-fH-9Ng" customClass="TimerView" customModule="Score_Board_Donut" customModuleProvider="target">
                                         <rect key="frame" x="99.333333333333329" y="98.666666666666686" width="196.66666666666669" height="197"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="5Xc-7K-obY">
-                                                <rect key="frame" x="24.000000000000014" y="24.666666666666629" width="147.33333333333337" height="147.66666666666666"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Li-U5-Gug">
+                                                <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="197"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03n-gm-bEc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="147.33333333333334" height="55.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="98.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dl7-cQ-MyI">
-                                                        <rect key="frame" x="0.0" y="92.333333333333371" width="147.33333333333334" height="55.333333333333343"/>
-                                                        <state key="normal" title="Play"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZHE-6v-mbM">
+                                                        <rect key="frame" x="0.0" y="98.333333333333314" width="196.66666666666666" height="20"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dl7-cQ-MyI">
+                                                        <rect key="frame" x="78.666666666666671" y="118.3333333333333" width="39.333333333333329" height="39.333333333333329"/>
+                                                        <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                                        <state key="normal" title="Play" image="timer-play.png"/>
                                                         <connections>
                                                             <action selector="playPauseTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k5P-0I-zHO"/>
                                                         </connections>
                                                     </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0P-Iw-NMK">
+                                                        <rect key="frame" x="0.0" y="157.66666666666663" width="196.66666666666666" height="39.333333333333343"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="03n-gm-bEc" firstAttribute="width" secondItem="5Xc-7K-obY" secondAttribute="width" id="FD8-1y-hAm"/>
-                                                    <constraint firstItem="Dl7-cQ-MyI" firstAttribute="width" secondItem="5Xc-7K-obY" secondAttribute="width" id="Ko1-iV-3AO"/>
-                                                    <constraint firstItem="03n-gm-bEc" firstAttribute="centerX" secondItem="5Xc-7K-obY" secondAttribute="centerX" id="LIn-Ft-qSf"/>
-                                                    <constraint firstItem="03n-gm-bEc" firstAttribute="height" secondItem="5Xc-7K-obY" secondAttribute="height" multiplier="0.375" id="QKn-n0-ETf"/>
-                                                    <constraint firstItem="Dl7-cQ-MyI" firstAttribute="centerX" secondItem="5Xc-7K-obY" secondAttribute="centerX" id="id2-ws-d2f"/>
-                                                    <constraint firstItem="Dl7-cQ-MyI" firstAttribute="height" secondItem="5Xc-7K-obY" secondAttribute="height" multiplier="0.375" id="moi-3j-8WJ"/>
+                                                    <constraint firstItem="v0P-Iw-NMK" firstAttribute="height" secondItem="0Li-U5-Gug" secondAttribute="height" multiplier="0.2" id="1lB-km-cpx"/>
+                                                    <constraint firstItem="03n-gm-bEc" firstAttribute="width" secondItem="0Li-U5-Gug" secondAttribute="width" id="3xG-0F-meG"/>
+                                                    <constraint firstItem="Dl7-cQ-MyI" firstAttribute="height" secondItem="0Li-U5-Gug" secondAttribute="height" multiplier="0.2" id="5SL-Va-Qz9"/>
+                                                    <constraint firstItem="03n-gm-bEc" firstAttribute="height" secondItem="0Li-U5-Gug" secondAttribute="height" multiplier="0.5" id="AdT-W2-1wG"/>
+                                                    <constraint firstItem="ZHE-6v-mbM" firstAttribute="centerX" secondItem="0Li-U5-Gug" secondAttribute="centerX" id="Ibv-Kd-Ypb"/>
+                                                    <constraint firstItem="v0P-Iw-NMK" firstAttribute="centerX" secondItem="0Li-U5-Gug" secondAttribute="centerX" id="ODu-YQ-cND"/>
+                                                    <constraint firstItem="Dl7-cQ-MyI" firstAttribute="width" secondItem="0Li-U5-Gug" secondAttribute="width" multiplier="0.2" id="Y1x-jY-UNK"/>
+                                                    <constraint firstItem="v0P-Iw-NMK" firstAttribute="width" secondItem="0Li-U5-Gug" secondAttribute="width" id="aOX-aT-3J0"/>
+                                                    <constraint firstItem="03n-gm-bEc" firstAttribute="centerX" secondItem="0Li-U5-Gug" secondAttribute="centerX" id="cuw-cs-du1"/>
+                                                    <constraint firstItem="ZHE-6v-mbM" firstAttribute="height" secondItem="0Li-U5-Gug" secondAttribute="height" multiplier="0.1" id="uUh-xA-sMz"/>
+                                                    <constraint firstItem="ZHE-6v-mbM" firstAttribute="width" secondItem="0Li-U5-Gug" secondAttribute="width" id="vQj-wE-pPL"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="5Xc-7K-obY" firstAttribute="height" secondItem="3hg-fH-9Ng" secondAttribute="height" multiplier="0.75" id="UAF-OO-Iop"/>
-                                            <constraint firstItem="5Xc-7K-obY" firstAttribute="width" secondItem="3hg-fH-9Ng" secondAttribute="width" multiplier="0.75" id="UGW-OB-kb8"/>
-                                            <constraint firstItem="5Xc-7K-obY" firstAttribute="centerY" secondItem="3hg-fH-9Ng" secondAttribute="centerY" id="YYN-v2-C3b"/>
-                                            <constraint firstItem="5Xc-7K-obY" firstAttribute="centerX" secondItem="3hg-fH-9Ng" secondAttribute="centerX" id="ags-G4-m9J"/>
+                                            <constraint firstItem="0Li-U5-Gug" firstAttribute="centerX" secondItem="3hg-fH-9Ng" secondAttribute="centerX" id="UOm-jH-150"/>
+                                            <constraint firstItem="0Li-U5-Gug" firstAttribute="centerY" secondItem="3hg-fH-9Ng" secondAttribute="centerY" id="kxK-4F-Jaz"/>
+                                            <constraint firstItem="0Li-U5-Gug" firstAttribute="width" secondItem="3hg-fH-9Ng" secondAttribute="width" id="rBg-jb-uYI"/>
+                                            <constraint firstItem="0Li-U5-Gug" firstAttribute="height" secondItem="3hg-fH-9Ng" secondAttribute="height" id="sT3-Qw-MgQ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="3hg-fH-9Ng" firstAttribute="height" secondItem="X9P-eL-MCp" secondAttribute="height" multiplier="0.5" id="Da9-J8-tsM"/>
+                                    <constraint firstItem="3hg-fH-9Ng" firstAttribute="centerX" secondItem="X9P-eL-MCp" secondAttribute="centerX" id="Fl9-jm-6uc"/>
                                     <constraint firstItem="3hg-fH-9Ng" firstAttribute="centerX" secondItem="X9P-eL-MCp" secondAttribute="centerX" id="IXy-yt-lYb"/>
-                                    <constraint firstItem="3hg-fH-9Ng" firstAttribute="centerY" secondItem="X9P-eL-MCp" secondAttribute="centerY" id="NKN-DR-WQS"/>
-                                    <constraint firstItem="3hg-fH-9Ng" firstAttribute="centerX" secondItem="X9P-eL-MCp" secondAttribute="centerX" id="Vbi-R0-QRx"/>
                                     <constraint firstItem="3hg-fH-9Ng" firstAttribute="centerY" secondItem="X9P-eL-MCp" secondAttribute="centerY" id="Z63-75-Hxm"/>
                                     <constraint firstAttribute="width" secondItem="X9P-eL-MCp" secondAttribute="height" multiplier="1:1" id="nD7-XA-mF0"/>
                                     <constraint firstItem="3hg-fH-9Ng" firstAttribute="width" secondItem="X9P-eL-MCp" secondAttribute="width" multiplier="0.5" id="uu0-N0-UQ1"/>
@@ -205,5 +218,6 @@
         <image name="profile.png" width="512" height="512"/>
         <image name="reset.png" width="512" height="512"/>
         <image name="timeRefresh.png" width="512" height="512"/>
+        <image name="timer-play.png" width="512" height="512"/>
     </resources>
 </document>
