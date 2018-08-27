@@ -62,7 +62,6 @@ class DonutView: UIView {
 
         for section in 0...(numPlayer - 1) {
             drawOuterSection(rect: rect, section: section)
-            //drawOperators(rect: rect, section: section)
         }
     }
 
@@ -77,29 +76,6 @@ class DonutView: UIView {
         
         outerPath.lineWidth = 0.5 * radius
         outerPath.stroke()
-
-    }
-    
-    func drawOperators(rect: CGRect, section: Int) {
-        let radius: CGFloat = 0.5 * max(rect.width, rect.height)
-        let startAngle = .pi * CGFloat(0.5 + (-1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
-        let endAngle = .pi * CGFloat(0.5 + (1 + 2 * CGFloat(section)) / CGFloat(numPlayer))
-        let (startX, startY) = findCoordinatesOnArcWith(angle: startAngle, radius: radius)
-        let (endX, endY) = findCoordinatesOnArcWith(angle: endAngle, radius: radius)
-        
-        let distance = findDistanceBetween(pointA: CGPoint(x: startX, y: startY), pointB: CGPoint(x: endX, y: endY))
-
-        let strikeLen = distance * Constants.StrikeProportion
-
-        let plusStrikeStart = CGPoint(x: (startX - endX) / Constants.StrikeProportion, y: (startY - endY) / Constants.StrikeProportion)
-        let plusStrikeEnd = CGPoint(x: plusStrikeStart.x + strikeLen, y: plusStrikeStart.y + startY)
-
-        let plusPath = UIBezierPath()
-        plusPath.lineWidth = 5
-        plusPath.move(to: CGPoint(x: startX, y: startY))
-        plusPath.addLine(to: CGPoint(x: endX, y: endY))
-        UIColor.gray.setStroke()
-        plusPath.stroke()
 
     }
     
@@ -120,8 +96,7 @@ class DonutView: UIView {
     private func configureScoreLabel(_ label: UILabel, section: Int, score: Int) {
         
         label.attributedText = createAttributedStringForScore(score)
-        label.backgroundColor = UIColor(hex: colorOps[0].rawValue)
-        
+
         if newLabelCreated < numPlayer {
 
             let radius: CGFloat = 0.375 * max(bounds.width, bounds.height)
@@ -141,7 +116,7 @@ class DonutView: UIView {
 extension DonutView {
     private struct Constants {
         static let StrikeProportion: CGFloat = 0.2
-        static let scoreFontSizeToBoundsSizeRatio: CGFloat = 0.06
+        static let scoreFontSizeToBoundsSizeRatio: CGFloat = 0.1
         static let scoreLabelHeightToArcRadiusRatio: CGFloat = 0.25
         static let scoreLabelWidthToHeightRatio: CGFloat = 2
     }
