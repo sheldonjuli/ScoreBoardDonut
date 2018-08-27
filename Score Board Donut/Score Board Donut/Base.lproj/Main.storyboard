@@ -26,7 +26,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrD-ug-b5g">
                                         <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
                                         <color key="backgroundColor" red="1" green="0.77647058823529413" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                        <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                                         <state key="normal" image="minus.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -38,20 +38,21 @@
                                         <rect key="frame" x="31" y="0.0" width="31" height="31"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="4PE-F8-AwX">
-                                                <rect key="frame" x="1.3333333333333428" y="1" width="28" height="27.666666666666668"/>
+                                                <rect key="frame" x="3" y="2.3333333333333357" width="24.666666666666668" height="25"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="4PE-F8-AwX" firstAttribute="height" secondItem="DyG-RL-SUR" secondAttribute="height" multiplier="0.9" id="9gr-JG-D3h"/>
+                                            <constraint firstItem="4PE-F8-AwX" firstAttribute="height" secondItem="DyG-RL-SUR" secondAttribute="height" multiplier="0.8" id="9gr-JG-D3h"/>
                                             <constraint firstItem="4PE-F8-AwX" firstAttribute="centerX" secondItem="DyG-RL-SUR" secondAttribute="centerX" id="EnT-Kx-PHt"/>
                                             <constraint firstItem="4PE-F8-AwX" firstAttribute="centerY" secondItem="DyG-RL-SUR" secondAttribute="centerY" id="SzM-cW-mrx"/>
-                                            <constraint firstItem="4PE-F8-AwX" firstAttribute="width" secondItem="DyG-RL-SUR" secondAttribute="width" multiplier="0.9" id="XlW-Pl-ubs"/>
+                                            <constraint firstItem="4PE-F8-AwX" firstAttribute="width" secondItem="DyG-RL-SUR" secondAttribute="width" multiplier="0.8" id="XlW-Pl-ubs"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LsG-DP-UCj">
                                         <rect key="frame" x="62" y="0.0" width="31" height="31"/>
-                                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -59,7 +60,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEM-aa-Nu7">
                                         <rect key="frame" x="93" y="0.0" width="31" height="31"/>
                                         <color key="backgroundColor" red="1" green="0.77647058823529413" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                        <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                                         <state key="normal" image="add.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -155,7 +156,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="GW3-1B-ZbT" secondAttribute="height" multiplier="1:1" id="eOu-p6-aJI"/>
                                         </constraints>
-                                        <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                        <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                                         <state key="normal" title="Button" image="timeRefresh.png"/>
                                         <connections>
                                             <action selector="resetTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Ba-OQ-YhC"/>
@@ -167,7 +168,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ABb-j5-TvW" secondAttribute="height" multiplier="1:1" id="j9b-fG-vs2"/>
                                         </constraints>
-                                        <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                        <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                                         <state key="normal" title="Reset" image="reset.png"/>
                                         <connections>
                                             <action selector="resetScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gbO-7i-yRj"/>
