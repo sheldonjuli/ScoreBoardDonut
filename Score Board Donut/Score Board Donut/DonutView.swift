@@ -14,10 +14,10 @@ class DonutView: UIView {
     @IBInspectable
     var numPlayer: Int = 4 {
         didSet {
-            setNeedsDisplay()
-            setNeedsLayout()
+            setNeedsDisplay(); setNeedsLayout()
             
             // recreate all labels
+            scoreLabels.forEach({ $0.removeFromSuperview() })
             scoreLabels = createScoreLabels(numPlayer: numPlayer)
         }
     }
@@ -28,17 +28,14 @@ class DonutView: UIView {
     
     private func createScoreLabels(numPlayer: Int) -> [UILabel] {
         
-        // remove all labels from superview first
-        // self.subviews.forEach({ $0.removeFromSuperview() })
-        
         // create labels
-        var scoreLabels: [UILabel] = []
+        var newLabels: [UILabel] = []
         for _ in 0...numPlayer - 1 {
             let newLabel = UILabel()
-            scoreLabels.append(newLabel)
+            newLabels.append(newLabel)
             addSubview(newLabel)
         }
-        return scoreLabels
+        return newLabels
     }
     
     override func layoutSubviews() {
