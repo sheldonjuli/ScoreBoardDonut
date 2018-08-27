@@ -92,11 +92,11 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZHE-6v-mbM">
-                                                        <rect key="frame" x="0.0" y="98.333333333333314" width="196.66666666666666" height="20"/>
+                                                        <rect key="frame" x="0.0" y="98.333333333333314" width="196.66666666666666" height="29.666666666666671"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dl7-cQ-MyI">
-                                                        <rect key="frame" x="78.666666666666671" y="118.3333333333333" width="39.333333333333329" height="39.333333333333329"/>
+                                                        <rect key="frame" x="83.666666666666671" y="128.33333333333331" width="29.333333333333329" height="29.333333333333343"/>
                                                         <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                                                         <state key="normal" title="Play" image="timer-play.png"/>
                                                         <connections>
@@ -111,14 +111,14 @@
                                                 <constraints>
                                                     <constraint firstItem="v0P-Iw-NMK" firstAttribute="height" secondItem="0Li-U5-Gug" secondAttribute="height" multiplier="0.2" id="1lB-km-cpx"/>
                                                     <constraint firstItem="03n-gm-bEc" firstAttribute="width" secondItem="0Li-U5-Gug" secondAttribute="width" id="3xG-0F-meG"/>
-                                                    <constraint firstItem="Dl7-cQ-MyI" firstAttribute="height" secondItem="0Li-U5-Gug" secondAttribute="height" multiplier="0.2" id="5SL-Va-Qz9"/>
+                                                    <constraint firstItem="Dl7-cQ-MyI" firstAttribute="height" secondItem="0Li-U5-Gug" secondAttribute="height" multiplier="0.15" id="5SL-Va-Qz9"/>
                                                     <constraint firstItem="03n-gm-bEc" firstAttribute="height" secondItem="0Li-U5-Gug" secondAttribute="height" multiplier="0.5" id="AdT-W2-1wG"/>
                                                     <constraint firstItem="ZHE-6v-mbM" firstAttribute="centerX" secondItem="0Li-U5-Gug" secondAttribute="centerX" id="Ibv-Kd-Ypb"/>
                                                     <constraint firstItem="v0P-Iw-NMK" firstAttribute="centerX" secondItem="0Li-U5-Gug" secondAttribute="centerX" id="ODu-YQ-cND"/>
-                                                    <constraint firstItem="Dl7-cQ-MyI" firstAttribute="width" secondItem="0Li-U5-Gug" secondAttribute="width" multiplier="0.2" id="Y1x-jY-UNK"/>
+                                                    <constraint firstItem="Dl7-cQ-MyI" firstAttribute="width" secondItem="0Li-U5-Gug" secondAttribute="width" multiplier="0.15" id="Y1x-jY-UNK"/>
                                                     <constraint firstItem="v0P-Iw-NMK" firstAttribute="width" secondItem="0Li-U5-Gug" secondAttribute="width" id="aOX-aT-3J0"/>
                                                     <constraint firstItem="03n-gm-bEc" firstAttribute="centerX" secondItem="0Li-U5-Gug" secondAttribute="centerX" id="cuw-cs-du1"/>
-                                                    <constraint firstItem="ZHE-6v-mbM" firstAttribute="height" secondItem="0Li-U5-Gug" secondAttribute="height" multiplier="0.1" id="uUh-xA-sMz"/>
+                                                    <constraint firstItem="ZHE-6v-mbM" firstAttribute="height" secondItem="0Li-U5-Gug" secondAttribute="height" multiplier="0.15" id="uUh-xA-sMz"/>
                                                     <constraint firstItem="ZHE-6v-mbM" firstAttribute="width" secondItem="0Li-U5-Gug" secondAttribute="width" id="vQj-wE-pPL"/>
                                                 </constraints>
                                             </stackView>
