@@ -15,6 +15,7 @@ enum ColorPool : String {
     case Yellow = "FFC843"
     case Blue = "5E96DC"
     case Green = "4FBA6F"
+    case AppIconBlue = "00D2FF"
     
 }
 
