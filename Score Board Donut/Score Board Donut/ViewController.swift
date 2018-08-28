@@ -39,6 +39,9 @@ class ViewController: UIViewController {
     private struct Constants {
         static let playerNumLabelFontToViewWidthRatio: CGFloat = 0.065
         static let stopWatchLabelFontToViewWidthRatio: CGFloat = 0.09
+        
+        static let timerPauseImageName = "timer-pause.png"
+        static let timerPlayImageName = "timer-play.png"
     }
     
     private var playerNumLabelFontSize: CGFloat {
@@ -111,7 +114,6 @@ class ViewController: UIViewController {
             donutView.scores = [Int]()
             for playerIndex in 0...game.players.count - 1 {
                 donutView.scores.append(game.players[playerIndex].score)
-
             }
         }
     }
@@ -134,12 +136,12 @@ class ViewController: UIViewController {
             RunLoop.current.add(stopWatch.timer, forMode: .commonModes)
             
             isPlay = true
-            changeButton(playPauseButton, imageName: "timer-pause.png", titleColor: UIColor.red)
+            changeButton(playPauseButton, imageName: Constants.timerPauseImageName, titleColor: UIColor.red)
         } else {
             
             stopWatch.timer.invalidate()
             isPlay = false
-            changeButton(playPauseButton, imageName: "timer-play.png", titleColor: UIColor.green)
+            changeButton(playPauseButton, imageName: Constants.timerPlayImageName, titleColor: UIColor.green)
         }
     }
     
@@ -148,7 +150,7 @@ class ViewController: UIViewController {
         stopWatch.counter = 0.0
         stopWatchLabel.text = "00:00"
         isPlay = false
-        changeButton(playPauseButton, imageName: "timer-play.png", titleColor: UIColor.green)
+        changeButton(playPauseButton, imageName: Constants.timerPlayImageName, titleColor: UIColor.green)
     }
 
     fileprivate func changeButton(_ button: UIButton, imageName: String, titleColor: UIColor) {
