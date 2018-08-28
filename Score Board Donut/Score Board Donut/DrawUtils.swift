@@ -49,6 +49,12 @@ func findDistanceBetween(pointA: CGPoint, pointB: CGPoint) -> CGFloat {
     return CGFloat(sqrt((xDist * xDist) + (yDist * yDist)))
 }
 
+func findCoordinatesOnArcWith(bounds: CGRect, angle: CGFloat, radius: CGFloat) -> (CGFloat, CGFloat) {
+    let x = radius * cos(angle) + bounds.midX
+    let y = radius * sin(angle) + bounds.midY
+    return (x, y)
+}
+
 func findLongerSideLen(rect: CGRect) -> CGFloat {
     return max(rect.width, rect.height)
 }
