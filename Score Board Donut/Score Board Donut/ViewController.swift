@@ -33,13 +33,29 @@ class ViewController: UIViewController {
     }
 
     private lazy var game: Game = Game(numPlayer: numPlayer)
+    
+    private struct Constants {
+        static let playerNumLabelFontToViewWidthRatio: CGFloat = 0.065
+        static let stopWatchLabelFontToViewWidthRatio: CGFloat = 0.09
+    }
+    
+    private var playerNumLabelFontSize: CGFloat {
+        return self.view.frame.width * Constants.playerNumLabelFontToViewWidthRatio
+    }
+    
+    private var stopWatchLabelFontSize: CGFloat {
+        return self.view.frame.width * Constants.stopWatchLabelFontToViewWidthRatio
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        playerNumLabel.font = playerNumLabel.font.withSize(playerNumLabelFontSize)
+        stopWatchLabel.font = stopWatchLabel.font.withSize(stopWatchLabelFontSize)
+
         updateDonutView()
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(updatePlayerScore))
-        
         donutView.addGestureRecognizer(tapRecognizer)
     }
     
@@ -156,4 +172,5 @@ class ViewController: UIViewController {
 fileprivate extension Selector {
     static let updateTimer = #selector(ViewController.updateTimer)
 }
+
 
