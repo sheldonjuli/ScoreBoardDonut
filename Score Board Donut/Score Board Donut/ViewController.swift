@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: Variables
     @IBOutlet weak var donutView: DonutView!
 
     @IBOutlet weak var playerNumLabel: UILabel!
@@ -34,6 +35,7 @@ class ViewController: UIViewController {
 
     private lazy var game: Game = Game(numPlayer: numPlayer)
     
+    // MARK: Constants
     private struct Constants {
         static let playerNumLabelFontToViewWidthRatio: CGFloat = 0.065
         static let stopWatchLabelFontToViewWidthRatio: CGFloat = 0.09
@@ -47,6 +49,8 @@ class ViewController: UIViewController {
         return self.view.frame.width * Constants.stopWatchLabelFontToViewWidthRatio
     }
 
+    
+    // MARK: System functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,10 +63,21 @@ class ViewController: UIViewController {
         donutView.addGestureRecognizer(tapRecognizer)
     }
     
-    @objc private func updatePlayerScore(_ sender: UITapGestureRecognizer) {
-        let tappedPoint = sender.location(in: donutView)
-        let (section, scoreChange) = determineSection(tappedPoint: tappedPoint)
-        game.players[section].score += scoreChange
+    
+    // MARK: Score functions
+    @IBAction func editPlayerNum(_ sender: UIButton) {
+        
+        if sender == PlayerNumDownButton, numPlayer > 1 {
+            numPlayer -= 1
+        } else if sender == playerNumUpButton {
+            if numPlayer < 4 {
+                numPlayer += 1
+            }
+        }
+    }
+    
+    @IBAction func resetScore(_ sender: Any) {
+        game.resetPlayerScore()
         updateDonutView()
     }
     
@@ -90,11 +105,6 @@ class ViewController: UIViewController {
 
         return (0, 0)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     private func updateDonutView() {
         if game.players.count > 0 {
@@ -106,17 +116,15 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func editPlayerNum(_ sender: UIButton) {
-        
-        if sender == PlayerNumDownButton, numPlayer > 1 {
-            numPlayer -= 1
-        } else if sender == playerNumUpButton {
-            if numPlayer < 4 {
-                numPlayer += 1
-            }
-        }
+    @objc private func updatePlayerScore(_ sender: UITapGestureRecognizer) {
+        let tappedPoint = sender.location(in: donutView)
+        let (section, scoreChange) = determineSection(tappedPoint: tappedPoint)
+        game.players[section].score += scoreChange
+        updateDonutView()
     }
     
+
+    //MARK: Timer functions
     @IBAction func playPauseTimer(_ sender: AnyObject) {
         if !isPlay {
             unowned let weakSelf = self
@@ -163,10 +171,6 @@ class ViewController: UIViewController {
         stopWatchLabel.text = minutes + ":" + seconds
     }
 
-    @IBAction func resetScore(_ sender: Any) {
-        game.resetPlayerScore()
-        updateDonutView()
-    }
 }
 
 fileprivate extension Selector {
