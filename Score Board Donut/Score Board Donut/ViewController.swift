@@ -13,12 +13,16 @@ class ViewController: UIViewController {
     // MARK: Variables
     @IBOutlet weak var donutView: DonutView!
 
+    @IBOutlet weak var playerNumStackView: UIStackView!
     @IBOutlet weak var playerNumLabel: UILabel!
     @IBOutlet weak var playerNumUpButton: UIButton!
     @IBOutlet weak var PlayerNumDownButton: UIButton!
 
+
     @IBOutlet weak var stopWatchLabel: UILabel!
     @IBOutlet weak var playPauseButton: UIButton!
+    
+    @IBOutlet weak var resetStackView: UIStackView!
     @IBOutlet weak var resetTimeButton: UIButton!
     @IBOutlet weak var resetScoreButton: UIButton!
     
@@ -137,11 +141,18 @@ class ViewController: UIViewController {
             
             isPlay = true
             changeButton(playPauseButton, imageName: Constants.timerPauseImageName, titleColor: UIColor.red)
+            
+            playerNumStackView.isHidden = true
+            resetStackView.isHidden = true
+
         } else {
             
             stopWatch.timer.invalidate()
             isPlay = false
             changeButton(playPauseButton, imageName: Constants.timerPlayImageName, titleColor: UIColor.green)
+            
+            playerNumStackView.isHidden = false
+            resetStackView.isHidden = false
         }
     }
     
