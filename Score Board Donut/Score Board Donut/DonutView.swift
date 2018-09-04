@@ -16,11 +16,7 @@ class DonutView: UIView {
     var numPlayer: Int = 4 {
         didSet {
             setNeedsDisplay(); setNeedsLayout()
-            
-            // recreate all labels
-            scoreLabels.forEach({ $0.removeFromSuperview(); setNeedsLayout() })
-            newLabelCreated = 0
-            scoreLabels = createScoreLabels(numPlayer: numPlayer)
+            resetScoreLabels()
         }
     }
     
@@ -29,6 +25,21 @@ class DonutView: UIView {
     private lazy var scoreLabels: [UILabel] = createScoreLabels(numPlayer: numPlayer)
     
     private var newLabelCreated: Int = 0
+    
+    var orientation: UIDeviceOrientation = .portrait {
+        didSet {
+            setNeedsDisplay(); setNeedsLayout()
+            resetScoreLabels()
+        }
+    }
+    
+    private func resetScoreLabels() {
+        // recreate all labels
+        scoreLabels.forEach({ $0.removeFromSuperview(); setNeedsLayout() })
+        newLabelCreated = 0
+        scoreLabels = createScoreLabels(numPlayer: numPlayer)
+    }
+    
     
     //MARK: System functions
     override func layoutSubviews() {
@@ -41,6 +52,7 @@ class DonutView: UIView {
     override func draw(_ rect: CGRect) {
         drawBySections(rect: rect)
     }
+    
     
     //MARK: Draw section functions
     private func drawBySections(rect: CGRect) {
@@ -87,7 +99,7 @@ class DonutView: UIView {
     private func configureScoreLabel(_ label: UILabel, section: Int, score: Int) {
         
         label.attributedText = createAttributedStringForScore(score)
-
+        
         if newLabelCreated < numPlayer {
 
             let radius: CGFloat = 0.375 * max(bounds.width, bounds.height)

@@ -64,12 +64,25 @@ class ViewController: UIViewController {
         playerNumLabel.font = playerNumLabel.font.withSize(playerNumLabelFontSize)
         stopWatchLabel.font = stopWatchLabel.font.withSize(stopWatchLabelFontSize)
 
+        donutView.orientation = UIDevice.current.orientation
         updateDonutView()
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(updatePlayerScore))
         donutView.addGestureRecognizer(tapRecognizer)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(deviceRotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+    
+    @objc func deviceRotated(){
+        donutView.orientation = UIDevice.current.orientation
+    }
     
     // MARK: Score functions
     @IBAction func editPlayerNum(_ sender: UIButton) {
