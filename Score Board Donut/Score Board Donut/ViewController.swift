@@ -49,11 +49,19 @@ class ViewController: UIViewController {
     }
     
     private var playerNumLabelFontSize: CGFloat {
-        return self.view.frame.width * Constants.playerNumLabelFontToViewWidthRatio
+        return min(self.view.frame.height, self.view.frame.width) * Constants.playerNumLabelFontToViewWidthRatio
     }
     
     private var stopWatchLabelFontSize: CGFloat {
-        return self.view.frame.width * Constants.stopWatchLabelFontToViewWidthRatio
+        return min(self.view.frame.height, self.view.frame.width) * Constants.stopWatchLabelFontToViewWidthRatio
+    }
+    
+    private var orientation: UIDeviceOrientation = .portrait {
+        didSet {
+            donutView.orientation = orientation
+            playerNumLabel.font = playerNumLabel.font.withSize(playerNumLabelFontSize)
+            stopWatchLabel.font = stopWatchLabel.font.withSize(stopWatchLabelFontSize)
+        }
     }
 
     
@@ -64,7 +72,7 @@ class ViewController: UIViewController {
         playerNumLabel.font = playerNumLabel.font.withSize(playerNumLabelFontSize)
         stopWatchLabel.font = stopWatchLabel.font.withSize(stopWatchLabelFontSize)
 
-        donutView.orientation = UIDevice.current.orientation
+        orientation = UIDevice.current.orientation
         updateDonutView()
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(updatePlayerScore))
@@ -81,7 +89,7 @@ class ViewController: UIViewController {
     }
     
     @objc func deviceRotated(){
-        donutView.orientation = UIDevice.current.orientation
+        orientation = UIDevice.current.orientation
     }
     
     // MARK: Score functions
