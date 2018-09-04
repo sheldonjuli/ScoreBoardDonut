@@ -188,13 +188,6 @@
                                 <variation key="heightClass=compact" constant="30"/>
                             </constraint>
                             <constraint firstItem="X9P-eL-MCp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8FD-lF-fO3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KSb-rA-Ktl" secondAttribute="trailing" constant="460.5" id="BYM-95-Ovq">
-                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
-                            </constraint>
-                            <constraint firstItem="Nq5-6b-NpH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="D9H-dN-7zA"/>
-                            <constraint firstItem="Nq5-6b-NpH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="269" id="DE5-E3-c43">
-                                <variation key="heightClass=regular-widthClass=regular" constant="30"/>
-                            </constraint>
                             <constraint firstItem="KSb-rA-Ktl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="Jfi-HC-Fpg"/>
                             <constraint firstItem="Nq5-6b-NpH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="RVc-rF-eCu"/>
                             <constraint firstItem="Nq5-6b-NpH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="257.66666666666674" id="SJY-GK-wKR">
@@ -207,7 +200,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KSb-rA-Ktl" secondAttribute="bottom" constant="30" id="nwW-fz-gLh"/>
                             <constraint firstItem="X9P-eL-MCp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tar-dS-BA1"/>
                             <constraint firstItem="Nq5-6b-NpH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uM4-Qg-iPH"/>
-                            <constraint firstItem="KSb-rA-Ktl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="wbX-lb-mDT"/>
                             <constraint firstItem="KSb-rA-Ktl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" id="ypc-du-I5A"/>
                             <constraint firstItem="X9P-eL-MCp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="750" constant="10" id="zM5-BF-tfj"/>
                         </constraints>
@@ -215,13 +207,9 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="0Nk-up-F1G"/>
-                                <exclude reference="BYM-95-Ovq"/>
-                                <exclude reference="D9H-dN-7zA"/>
-                                <exclude reference="DE5-E3-c43"/>
                                 <exclude reference="RVc-rF-eCu"/>
                                 <exclude reference="SJY-GK-wKR"/>
                                 <exclude reference="Jfi-HC-Fpg"/>
-                                <exclude reference="wbX-lb-mDT"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -238,14 +226,10 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
-                                <include reference="BYM-95-Ovq"/>
-                                <include reference="D9H-dN-7zA"/>
-                                <include reference="DE5-E3-c43"/>
-                                <exclude reference="dmC-aN-IXD"/>
-                                <exclude reference="uM4-Qg-iPH"/>
-                                <exclude reference="V7Z-oW-dgu"/>
-                                <include reference="wbX-lb-mDT"/>
-                                <exclude reference="ypc-du-I5A"/>
+                                <include reference="dmC-aN-IXD"/>
+                                <include reference="uM4-Qg-iPH"/>
+                                <include reference="V7Z-oW-dgu"/>
+                                <include reference="ypc-du-I5A"/>
                             </mask>
                         </variation>
                     </view>
