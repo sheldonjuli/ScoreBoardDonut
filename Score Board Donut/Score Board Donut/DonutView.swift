@@ -90,7 +90,6 @@ class DonutView: UIView {
     
     private func createAttributedStringForScore(_ score: Int) ->NSAttributedString {
         let font = UIFont.preferredFont(forTextStyle: .body).withSize(self.bounds.width * 0.1)
-        //font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
         return NSAttributedString(string: "\(score)", attributes:[.paragraphStyle: paragraphStyle, .font: font])
