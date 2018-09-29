@@ -81,11 +81,11 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(deviceRotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deviceRotated), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     @objc func deviceRotated(){
@@ -158,7 +158,7 @@ class ViewController: UIViewController {
             
             stopWatch.timer = Timer.scheduledTimer(timeInterval: 0.035, target: weakSelf, selector: Selector.updateTimer, userInfo: nil, repeats: true)
 
-            RunLoop.current.add(stopWatch.timer, forMode: .commonModes)
+            RunLoop.current.add(stopWatch.timer, forMode: RunLoop.Mode.common)
             
             isPlay = true
             changeButton(playPauseButton, imageName: Constants.timerPauseImageName, titleColor: UIColor.red)
@@ -186,7 +186,7 @@ class ViewController: UIViewController {
     }
 
     fileprivate func changeButton(_ button: UIButton, imageName: String, titleColor: UIColor) {
-        button.setImage(UIImage(named: imageName), for: UIControlState())
+        button.setImage(UIImage(named: imageName), for: UIControl.State())
     }
 
     @objc func updateTimer() {

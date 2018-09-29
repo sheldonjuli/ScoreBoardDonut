@@ -13,16 +13,9 @@
 		241163D3211F2DDE00B9056C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241163D2211F2DDE00B9056C /* Assets.xcassets */; };
 		241163D6211F2DDE00B9056C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241163D4211F2DDE00B9056C /* LaunchScreen.storyboard */; };
 		241163DE211F2E9700B9056C /* DonutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241163DD211F2E9700B9056C /* DonutView.swift */; };
-		24315128212D5AA900E53079 /* timeRefresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 24315127212D5AA900E53079 /* timeRefresh.png */; };
-		2431512A212D5B5B00E53079 /* reset.png in Resources */ = {isa = PBXBuildFile; fileRef = 24315129212D5B5B00E53079 /* reset.png */; };
 		2455DC0E2120A6E7009656E5 /* ObjectModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2455DC0D2120A6E7009656E5 /* ObjectModels.swift */; };
-		2455DC102120C58A009656E5 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2455DC0F2120C58A009656E5 /* profile.png */; };
-		2455DC122120CD8D009656E5 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 2455DC112120CD8D009656E5 /* add.png */; };
-		2455DC142120CE51009656E5 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 2455DC132120CE51009656E5 /* minus.png */; };
 		24743E19212C07F100CE230E /* DrawUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24743E18212C07F100CE230E /* DrawUtils.swift */; };
 		24B0B1EC212639E6007B7F6F /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0B1EB212639E6007B7F6F /* TimerView.swift */; };
-		24D4553A2133EC6B00006FE2 /* timer-play.png in Resources */ = {isa = PBXBuildFile; fileRef = 24D455392133EC6B00006FE2 /* timer-play.png */; };
-		24D4553C2133EDBD00006FE2 /* timer-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 24D4553B2133EDBD00006FE2 /* timer-pause.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,16 +27,9 @@
 		241163D5211F2DDE00B9056C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		241163D7211F2DDE00B9056C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		241163DD211F2E9700B9056C /* DonutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutView.swift; sourceTree = "<group>"; };
-		24315127212D5AA900E53079 /* timeRefresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeRefresh.png; sourceTree = "<group>"; };
-		24315129212D5B5B00E53079 /* reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reset.png; sourceTree = "<group>"; };
 		2455DC0D2120A6E7009656E5 /* ObjectModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModels.swift; sourceTree = "<group>"; };
-		2455DC0F2120C58A009656E5 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
-		2455DC112120CD8D009656E5 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
-		2455DC132120CE51009656E5 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
 		24743E18212C07F100CE230E /* DrawUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawUtils.swift; sourceTree = "<group>"; };
 		24B0B1EB212639E6007B7F6F /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
-		24D455392133EC6B00006FE2 /* timer-play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer-play.png"; sourceTree = "<group>"; };
-		24D4553B2133EDBD00006FE2 /* timer-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer-pause.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,13 +68,6 @@
 				24B0B1EB212639E6007B7F6F /* TimerView.swift */,
 				2455DC0D2120A6E7009656E5 /* ObjectModels.swift */,
 				24743E18212C07F100CE230E /* DrawUtils.swift */,
-				2455DC0F2120C58A009656E5 /* profile.png */,
-				2455DC112120CD8D009656E5 /* add.png */,
-				2455DC132120CE51009656E5 /* minus.png */,
-				24315127212D5AA900E53079 /* timeRefresh.png */,
-				24315129212D5B5B00E53079 /* reset.png */,
-				24D455392133EC6B00006FE2 /* timer-play.png */,
-				24D4553B2133EDBD00006FE2 /* timer-pause.png */,
 				241163CF211F2DDB00B9056C /* Main.storyboard */,
 				241163D2211F2DDE00B9056C /* Assets.xcassets */,
 				241163D4211F2DDE00B9056C /* LaunchScreen.storyboard */,
@@ -129,6 +108,7 @@
 				TargetAttributes = {
 					241163C7211F2DDB00B9056C = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -155,16 +135,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24D4553A2133EC6B00006FE2 /* timer-play.png in Resources */,
-				24315128212D5AA900E53079 /* timeRefresh.png in Resources */,
 				241163D6211F2DDE00B9056C /* LaunchScreen.storyboard in Resources */,
 				241163D3211F2DDE00B9056C /* Assets.xcassets in Resources */,
-				2455DC142120CE51009656E5 /* minus.png in Resources */,
 				241163D1211F2DDB00B9056C /* Main.storyboard in Resources */,
-				2455DC122120CD8D009656E5 /* add.png in Resources */,
-				2455DC102120C58A009656E5 /* profile.png in Resources */,
-				24D4553C2133EDBD00006FE2 /* timer-pause.png in Resources */,
-				2431512A212D5B5B00E53079 /* reset.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,13 +300,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X7D766PLD8;
 				INFOPLIST_FILE = "Score Board Donut/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.liju.Score-Board-Donut";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -345,13 +319,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X7D766PLD8;
 				INFOPLIST_FILE = "Score Board Donut/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.liju.Score-Board-Donut";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
