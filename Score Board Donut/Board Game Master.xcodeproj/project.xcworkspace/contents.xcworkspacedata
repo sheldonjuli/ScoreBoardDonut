@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Score Board Donut.xcodeproj">
+      location = "self:/Users/liju/Desktop/Board Game Helper/Score Board Donut/Board Game Master.xcodeproj">
    </FileRef>
 </Workspace>

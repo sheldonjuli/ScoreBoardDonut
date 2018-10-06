@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		241163C8211F2DDB00B9056C /* Score Board Donut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Score Board Donut.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		241163C8211F2DDB00B9056C /* Board Game Master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Board Game Master.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		241163CB211F2DDB00B9056C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		241163CD211F2DDB00B9056C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		241163D0211F2DDB00B9056C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		241163BF211F2DDB00B9056C = {
 			isa = PBXGroup;
 			children = (
-				241163CA211F2DDB00B9056C /* Score Board Donut */,
+				241163CA211F2DDB00B9056C /* Board Game Master */,
 				241163C9211F2DDB00B9056C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 		241163C9211F2DDB00B9056C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				241163C8211F2DDB00B9056C /* Score Board Donut.app */,
+				241163C8211F2DDB00B9056C /* Board Game Master.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		241163CA211F2DDB00B9056C /* Score Board Donut */ = {
+		241163CA211F2DDB00B9056C /* Board Game Master */ = {
 			isa = PBXGroup;
 			children = (
 				241163CB211F2DDB00B9056C /* AppDelegate.swift */,
@@ -73,15 +73,15 @@
 				241163D4211F2DDE00B9056C /* LaunchScreen.storyboard */,
 				241163D7211F2DDE00B9056C /* Info.plist */,
 			);
-			path = "Score Board Donut";
+			path = "Board Game Master";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		241163C7211F2DDB00B9056C /* Score Board Donut */ = {
+		241163C7211F2DDB00B9056C /* Board Game Master */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 241163DA211F2DDE00B9056C /* Build configuration list for PBXNativeTarget "Score Board Donut" */;
+			buildConfigurationList = 241163DA211F2DDE00B9056C /* Build configuration list for PBXNativeTarget "Board Game Master" */;
 			buildPhases = (
 				241163C4211F2DDB00B9056C /* Sources */,
 				241163C5211F2DDB00B9056C /* Frameworks */,
@@ -91,9 +91,9 @@
 			);
 			dependencies = (
 			);
-			name = "Score Board Donut";
+			name = "Board Game Master";
 			productName = "Score Board Donut";
-			productReference = 241163C8211F2DDB00B9056C /* Score Board Donut.app */;
+			productReference = 241163C8211F2DDB00B9056C /* Board Game Master.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -112,7 +112,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 241163C3211F2DDB00B9056C /* Build configuration list for PBXProject "Score Board Donut" */;
+			buildConfigurationList = 241163C3211F2DDB00B9056C /* Build configuration list for PBXProject "Board Game Master" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -125,7 +125,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				241163C7211F2DDB00B9056C /* Score Board Donut */,
+				241163C7211F2DDB00B9056C /* Board Game Master */,
 			);
 		};
 /* End PBXProject section */
@@ -299,13 +299,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X7D766PLD8;
-				INFOPLIST_FILE = "Score Board Donut/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Board Game Master/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.liju.Score-Board-Donut";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.liju.Board-Game-Master";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -318,13 +318,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X7D766PLD8;
-				INFOPLIST_FILE = "Score Board Donut/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Board Game Master/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.liju.Score-Board-Donut";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.liju.Board-Game-Master";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -334,7 +334,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		241163C3211F2DDB00B9056C /* Build configuration list for PBXProject "Score Board Donut" */ = {
+		241163C3211F2DDB00B9056C /* Build configuration list for PBXProject "Board Game Master" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				241163D8211F2DDE00B9056C /* Debug */,
@@ -343,7 +343,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		241163DA211F2DDE00B9056C /* Build configuration list for PBXNativeTarget "Score Board Donut" */ = {
+		241163DA211F2DDE00B9056C /* Build configuration list for PBXNativeTarget "Board Game Master" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				241163DB211F2DDE00B9056C /* Debug */,

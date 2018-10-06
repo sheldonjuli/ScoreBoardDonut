@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Score Board Donut
+//  Board Game Master
 //
 //  Created by Li Ju on 2018-08-11.
 //  Copyright © 2018 Li Ju. All rights reserved.
